@@ -1,23 +1,28 @@
+//Calculate total numbr of combinations
+
+//repititions default false
 let rep = false
-
-
+//constant update
 document.addEventListener("keyup", update)
 document.getElementById("repetitions").addEventListener("click", updateR)
+//change repitition mode, add border 
 function updateR(){
     document.getElementById("repetitions").classList.toggle("on")
     rep =!rep
     update()
 }
+//input
 function update() {
 let r = Number(document.getElementById("r").value)
 let n = Number(document.getElementById("n").value)
 let output = document.getElementById("output")
+//output
 output.innerHTML = Math.round(calcCombs(n,r))
 if (output.innerHTML == "NaN") {
     output.innerHTML = "stop yourself"
 }
 }
-
+//process
 function calcCombs(n,r) {
     if (rep) {
         if (n ==0){
@@ -33,7 +38,7 @@ function calcCombs(n,r) {
         }
     }
 }
-
+//cool loop (process) reject all non whole numbers
 function factorial(x) {
     if (x < 0){
         return "sdasdsadas"
